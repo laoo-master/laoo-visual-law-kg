@@ -3,27 +3,33 @@
 /**
  * Generate workspace access token
  *
- * Token is generated using SHA-256 hash of workspace name + secret key
- * This provides URL obfuscation without requiring database storage
+ * Token is generated using simple hash function (compatible with n8n sandbox)
+ * This provides URL obfuscation without requiring crypto module
  *
  * Usage:
  *   node generate-token.js wippli_339
  *   node generate-token.js wippli_339 custom-secret-key
  */
 
-const crypto = require('crypto');
-
-// Default secret key (should match LIGHTRAG_SECRET_KEY in .env)
+// Default secret key (should match in n8n workflow)
 const DEFAULT_SECRET = process.env.LIGHTRAG_SECRET_KEY || 'LAOO_LIGHTRAG_SECRET_2025';
 
-function generateToken(workspace, secret = DEFAULT_SECRET) {
-  const hash = crypto
-    .createHash('sha256')
-    .update(workspace + secret)
-    .digest('hex');
+function simpleHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash).toString(16).padStart(8, '0');
+}
 
-  // Use first 16 characters for shorter URLs
-  return hash.substring(0, 16);
+function generateToken(workspace, secret = DEFAULT_SECRET) {
+  const combined = workspace + secret;
+  // Create 16-char token from two 8-char hashes
+  const hash1 = simpleHash(combined);
+  const hash2 = simpleHash(combined.split('').reverse().join(''));
+  return hash1 + hash2;
 }
 
 function reverseEngineerWorkspace(token, candidateIds, secret = DEFAULT_SECRET) {
@@ -66,6 +72,9 @@ if (require.main === module) {
   console.log(`  workspace: "${workspace}"`);
   console.log(`  workspace_token: "${token}"`);
   console.log(`  workspace_url: "https://lightrag.uk.laoo.dev/w/${token}"`);
+
+  console.log('');
+  console.log('Note: Using simple hash algorithm (n8n sandbox compatible)');
 }
 
 module.exports = { generateToken, reverseEngineerWorkspace };
