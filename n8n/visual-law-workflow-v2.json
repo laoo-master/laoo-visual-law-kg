@@ -1,0 +1,1816 @@
+{
+  "createdAt": "2025-09-30T11:51:51.488Z",
+  "updatedAt": "2025-10-18T12:15:05.738Z",
+  "id": "sMNCPYGpsCqv9O1A",
+  "name": "Visual Law",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "6fdblp2hq4sisg25vb86er",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1216,
+        304
+      ],
+      "id": "87049e32-9219-48c4-ab59-fd4088fb780b",
+      "name": "Webhook",
+      "webhookId": "6fdblp2hq4sisg25vb86er"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "prompt",
+              "value": "={{ $json.body.prompt || $json.body.nodesObject.aiAgent.prompt }}",
+              "type": "string"
+            },
+            {
+              "name": "knowledge_base",
+              "value": "={{ $json.body.nodesObject.aiAgent.knowledge_base[0].original }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -816,
+        -128
+      ],
+      "id": "471a99fa-a012-4e28-b355-0bdb669f5305",
+      "name": "PROMPT"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "supplier_id",
+              "value": "={{ $json.body.nodesObject.supplier.id }}",
+              "type": "number"
+            },
+            {
+              "name": "supplier_role",
+              "value": "={{ $json.body.nodesObject.supplier.role }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_firstName",
+              "value": "={{ $json.body.nodesObject.supplier.firstName }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_lastName",
+              "value": "={{ $json.body.nodesObject.supplier.lastName }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_email",
+              "value": "={{ $json.body.nodesObject.supplier.email }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_workPhone",
+              "value": "={{ $json.body.nodesObject.supplier.workPhone }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_emailNotifications",
+              "value": "={{ $json.body.nodesObject.supplier.emailNotifications }}",
+              "type": "boolean"
+            },
+            {
+              "name": "supplier_websiteNotifications",
+              "value": "={{ $json.body.nodesObject.supplier.websiteNotifications }}",
+              "type": "boolean"
+            },
+            {
+              "name": "supplier_phonePushNotifications",
+              "value": "={{ $json.body.nodesObject.supplier.phonePushNotifications }}",
+              "type": "boolean"
+            },
+            {
+              "name": "supplier_isCreator",
+              "value": "={{ $json.body.nodesObject.supplier.isCreator }}",
+              "type": "boolean"
+            },
+            {
+              "name": "supplier_timeZone",
+              "value": "={{ $json.body.nodesObject.supplier.timeZone }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_avatar",
+              "value": "={{ $json.body.nodesObject.supplier.avatar }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_createdAt",
+              "value": "={{ $json.body.nodesObject.supplier.createdAt }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_updatedAt",
+              "value": "={{ $json.body.nodesObject.supplier.updatedAt }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_isDeleted",
+              "value": "={{ $json.body.nodesObject.supplier.isDeleted }}",
+              "type": "boolean"
+            },
+            {
+              "name": "supplier_aiAgentId",
+              "value": "={{ $json.body.nodesObject.supplier.aiAgentId }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_currentUserProfile",
+              "value": "={{ $json.body.nodesObject.supplier.currentUserProfile }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_online",
+              "value": "={{ $json.body.nodesObject.supplier.online }}",
+              "type": "number"
+            },
+            {
+              "name": "supplier_companyId",
+              "value": "={{ $json.body.nodesObject.supplier.companyId }}",
+              "type": "number"
+            },
+            {
+              "name": "supplier_companyType",
+              "value": "={{ $json.body.nodesObject.supplier.companyType }}",
+              "type": "string"
+            },
+            {
+              "name": "supplier_companyName",
+              "value": "={{ $json.body.nodesObject.supplier.companyName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -816,
+        528
+      ],
+      "id": "90822ae0-f413-4a32-a200-f3796893e0f6",
+      "name": "SUPPLIER"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "user_id",
+              "value": "={{ $json.body.nodesObject?.user.id }}",
+              "type": "number"
+            },
+            {
+              "name": "user_role",
+              "value": "={{ $json.body.nodesObject.user.role }}",
+              "type": "string"
+            },
+            {
+              "name": "user_firstName",
+              "value": "={{ $json.body.nodesObject.user.firstName }}",
+              "type": "string"
+            },
+            {
+              "name": "user_lastName",
+              "value": "={{ $json.body.nodesObject.user.lastName }}",
+              "type": "string"
+            },
+            {
+              "name": "user_email",
+              "value": "={{ $json.body.nodesObject.user.email }}",
+              "type": "string"
+            },
+            {
+              "name": "user_workPhone",
+              "value": "={{ $json.body.nodesObject.user.workPhone }}",
+              "type": "string"
+            },
+            {
+              "name": "user_emailNotifications",
+              "value": "={{ $json.body.nodesObject.user.emailNotifications }}",
+              "type": "boolean"
+            },
+            {
+              "name": "user_websiteNotifications",
+              "value": "={{ $json.body.nodesObject.user.websiteNotifications }}",
+              "type": "boolean"
+            },
+            {
+              "name": "user_phonePushNotifications",
+              "value": "={{ $json.body.nodesObject.user.phonePushNotifications }}",
+              "type": "boolean"
+            },
+            {
+              "name": "user_isCreator",
+              "value": "={{ $json.body.nodesObject.user.isCreator }}",
+              "type": "boolean"
+            },
+            {
+              "name": "user_timeZone",
+              "value": "={{ $json.body.nodesObject.user.timeZone }}",
+              "type": "string"
+            },
+            {
+              "name": "user_avatar",
+              "value": "={{ $json.body.nodesObject.user.avatar }}",
+              "type": "string"
+            },
+            {
+              "name": "user_createdAt",
+              "value": "={{ $json.body.nodesObject.user.createdAt }}",
+              "type": "string"
+            },
+            {
+              "name": "user_updatedAt",
+              "value": "={{ $json.body.nodesObject.user.updatedAt }}",
+              "type": "string"
+            },
+            {
+              "name": "user_isDeleted",
+              "value": "={{ $json.body.nodesObject.user.isDeleted }}",
+              "type": "boolean"
+            },
+            {
+              "name": "user_aiAgentId",
+              "value": "={{ $json.body.nodesObject.user.aiAgentId }}",
+              "type": "string"
+            },
+            {
+              "name": "user_currentUserProfile",
+              "value": "={{ $json.body.nodesObject.user.currentUserProfile }}",
+              "type": "string"
+            },
+            {
+              "name": "user_online",
+              "value": "={{ $json.body.nodesObject.user.online }}",
+              "type": "number"
+            },
+            {
+              "name": "user_companyId",
+              "value": "={{ $json.body.nodesObject.user.companyId }}",
+              "type": "number"
+            },
+            {
+              "name": "user_companyType",
+              "value": "={{ $json.body.nodesObject.user.companyType }}",
+              "type": "string"
+            },
+            {
+              "name": "user_companyName",
+              "value": "={{ $json.body.nodesObject.user.companyName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -816,
+        112
+      ],
+      "id": "31338957-0468-4df3-8fc1-df796be01b9e",
+      "name": "USER"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "company_id",
+              "value": "={{ $json.body.nodesObject.company.id }}",
+              "type": "number"
+            },
+            {
+              "name": "company_name",
+              "value": "={{ $json.body.nodesObject.company.companyName }}",
+              "type": "string"
+            },
+            {
+              "name": "company_code",
+              "value": "={{ $json.body.nodesObject.company.companyCode }}",
+              "type": "string"
+            },
+            {
+              "name": "company_brandColour",
+              "value": "={{ $json.body.nodesObject.company.brandColour }}",
+              "type": "string"
+            },
+            {
+              "name": "company_shortName",
+              "value": "={{ $json.body.nodesObject.company.companyShortName }}",
+              "type": "string"
+            },
+            {
+              "name": "company_Email",
+              "value": "={{ $json.body.nodesObject.company.companyEmail }}",
+              "type": "string"
+            },
+            {
+              "name": "company_address",
+              "value": "={{ $json.body.nodesObject.company.address }}",
+              "type": "string"
+            },
+            {
+              "name": "company_city",
+              "value": "={{ $json.body.nodesObject.company.city }}",
+              "type": "string"
+            },
+            {
+              "name": "company_state",
+              "value": "={{ $json.body.nodesObject.company.state }}",
+              "type": "string"
+            },
+            {
+              "name": "company_country",
+              "value": "={{ $json.body.nodesObject.company.country }}",
+              "type": "string"
+            },
+            {
+              "name": "company_postCode",
+              "value": "={{ $json.body.nodesObject.company.postCode }}",
+              "type": "string"
+            },
+            {
+              "name": "company_industry",
+              "value": "={{ $json.body.nodesObject.company.industry }}",
+              "type": "string"
+            },
+            {
+              "name": "company_businessType",
+              "value": "={{ $json.body.nodesObject.company.businessType }}",
+              "type": "string"
+            },
+            {
+              "name": "company_description",
+              "value": "={{ $json.body.nodesObject.company.description }}",
+              "type": "string"
+            },
+            {
+              "name": "company_services",
+              "value": "={{ $json.body.nodesObject.company.services }}",
+              "type": "string"
+            },
+            {
+              "name": "company_website",
+              "value": "={{ $json.body.nodesObject.company.website }}",
+              "type": "string"
+            },
+            {
+              "name": "company_businessRate",
+              "value": "={{ $json.body.nodesObject.company.businessRate }}",
+              "type": "number"
+            },
+            {
+              "name": "company_currency",
+              "value": "={{ $json.body.nodesObject.company.currency }}",
+              "type": "string"
+            },
+            {
+              "name": "company_logo",
+              "value": "={{ $json.body.nodesObject.company.companyLogo }}",
+              "type": "string"
+            },
+            {
+              "name": "company_icon",
+              "value": "={{ $json.body.nodesObject.company.companyIcon }}",
+              "type": "string"
+            },
+            {
+              "name": "company_type",
+              "value": "={{ $json.body.nodesObject.company.companyType }}",
+              "type": "string"
+            },
+            {
+              "name": "company_createdAt",
+              "value": "={{ $json.body.nodesObject.company.createdAt }}",
+              "type": "string"
+            },
+            {
+              "name": "company_updatedAt",
+              "value": "={{ $json.body.nodesObject.company.updatedAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -816,
+        304
+      ],
+      "id": "d3650505-9b05-4c54-be62-056220b4943e",
+      "name": "COMPANY"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "wippli_id",
+              "value": "={{ $json.body.nodesObject?.wippli?.id || $json.body.wippliId }}",
+              "type": "number"
+            },
+            {
+              "name": "wippli_name",
+              "value": "={{ $json.body.nodesObject.wippli.name }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_status",
+              "value": "={{ $json.body.nodesObject.wippli.status }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_type",
+              "value": "={{ $json.body.nodesObject.wippli.type }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_deadline",
+              "value": "={{ $json.body.nodesObject.wippli.deadline }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_instructions",
+              "value": "={{ $json.body.nodesObject.wippli.instructions }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_companyId",
+              "value": "={{ $json.body.nodesObject.wippli.companyId }}",
+              "type": "number"
+            },
+            {
+              "name": "wippli_authorCompanyId",
+              "value": "={{ $json.body.nodesObject.wippli.authorCompanyId }}",
+              "type": "number"
+            },
+            {
+              "name": "wippli_authorId",
+              "value": "={{ $json.body.nodesObject.wippli.authorId }}",
+              "type": "number"
+            },
+            {
+              "name": "wippli_createdAt",
+              "value": "={{ $json.body.nodesObject.wippli.createdAt }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_updatedAt",
+              "value": "={{ $json.body.nodesObject.wippli.updatedAt }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_briefUpdatedAt",
+              "value": "={{ $json.body.nodesObject.wippli.wippliBriefUpdatedAt }}",
+              "type": "string"
+            },
+            {
+              "name": "wippli_customFormFields",
+              "value": "={{ $json.body.nodesObject.wippli.customFormFields }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -896,
+        752
+      ],
+      "id": "c1bc3b9e-5cad-4b59-b4f2-d32d5cbeb377",
+      "name": "WIPPLI"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.item.json;\nconst customFields = input.wippli_customFormFields || [];\n\nconst mappedFields = {};\nfor (const field of customFields) {\n  if (field.name) {\n    mappedFields[field.name] = field;\n  }\n}\n\ninput.wippli_customFormFields = mappedFields;\n\nreturn [{ json: input }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -720,
+        752
+      ],
+      "id": "28ca6a68-5fc0-4d30-8e89-505bc0b8e431",
+      "name": "Wippli Code"
+    },
+    {
+      "parameters": {
+        "numberInputs": 5
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        -480,
+        384
+      ],
+      "id": "7f33d2fa-6a58-4262-adff-c952fc80fefb",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "const merged = {};\n\nfor (const block of $input.all().map(i => i.json)) {\n  \n  for (const [key, value] of Object.entries(block)) {\n    if (typeof value !== 'object' || value === null) {\n      merged[key] = value;\n    }\n  }\n\n  if (block.wippli_customFormFields) {\n    merged.wippli_customFormFields = block.wippli_customFormFields;\n  }\n}\n\nreturn [{ json: merged }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        432
+      ],
+      "id": "99b92fc9-98dd-4245-9ef1-c6f76348bc15",
+      "name": "Flattening Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Preserve ALL webhook data and add document URL\nconst inputData = $input.first().json;\nconst documentUrl = inputData.wippli_customFormFields?.Drop_document?.value || '';\nconst question = inputData.wippli_customFormFields?.Map_question?.value || 'Analyze this document';\n\nreturn [{\n  json: {\n    ...inputData,\n    urlSource: documentUrl,\n    wippli_id: inputData.wippliId || inputData.wippli_id || 'unknown',\n    question: question,\n    user: inputData.user_name || inputData.user || 'system'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        96,
+        432
+      ],
+      "id": "b921ad50-5d04-4a05-ba58-9ccdd2252b7d",
+      "name": "Prepare Document URL"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://uksouth.api.cognitive.microsoft.com/documentintelligence/documentModels/prebuilt-layout:analyze?api-version=2024-11-30",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "urlSource",
+              "value": "={{ $json.urlSource }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        432
+      ],
+      "id": "ff086e16-50a8-422f-8044-152efe048378",
+      "name": "Azure Doc Start",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "x6kMSSQykEpgUi2Y",
+          "name": "Azure Document Intelligence"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 60,
+        "unit": "seconds"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        544,
+        432
+      ],
+      "id": "50aa8658-4c81-40de-b69e-0279003c455e",
+      "name": "Wait 3sec",
+      "webhookId": "azure-wait-hook"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Azure Doc Start').item.json.headers['operation-location'] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Ocp-Apim-Subscription-Key",
+              "value": "992e2c5be4914fd3b9178641a5c1aa9e"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        768,
+        432
+      ],
+      "id": "dbba4e3d-5e69-4621-839b-2e6f1056a6fb",
+      "name": "Get Result"
+    },
+    {
+      "parameters": {
+        "jsCode": "const result = $input.first().json;\n\n// Log the entire structure for debugging\nconsole.log('Full Azure result:', JSON.stringify(result, null, 2).substring(0, 500));\n\n// Handle different response structures from Azure Doc Intelligence\nconst content = result.analyzeResult?.content || \n                result.content || \n                result.analyzeResult?.paragraphs?.map(p => p.content).join('\\n\\n') || \n                '';\n\nconsole.log('Extracted content length:', content.length);\nconsole.log('First 100 chars:', content.substring(0, 100));\n\n// Return even if empty to see what we're getting\nreturn [{\n  json: {\n    text: content,\n    pageCount: result.analyzeResult?.pages?.length || 0,\n    status: result.status || 'unknown',\n    debug_keys: Object.keys(result),\n    has_analyzeResult: !!result.analyzeResult\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        432
+      ],
+      "id": "4352af28-ecc0-4ee1-bc0b-8f4811356b91",
+      "name": "Extract Text"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://lightrag.uk.laoo.dev/login",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "string",
+        "body": "username=admin@laoo.dev&password=Laoo_jhjkk-5%25jnjjnkjkj",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1216,
+        432
+      ],
+      "id": "0b40ea4c-7e42-4ee7-8d40-b9586589fbbd",
+      "name": "Login LightRAG"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://lightrag.uk.laoo.dev/documents/text?workspace=' + $json.workspace }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ 'Bearer ' + String($json.access_token).trim() }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  text: $json.document_content,\n  metadata: {\n    wippli_id: $json.wippli_id,\n    user: $json.user,\n    question: $json.question\n  }\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        432
+      ],
+      "id": "c0cb8b63-3a62-49dc-8d86-4378701b4bda",
+      "name": "Upload Document"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare workspace and data for LightRAG upload with workspace isolation\n//\n// Changes from original:\n// 1. Workspace name: wippli_{id} instead of wippli_{id}_{timestamp}\n// 2. Added token generation for secure workspace URLs\n// 3. Added workspace_url to response\n\nconst extractedText = $('Extract Text').first().json;\nconst loginData = $('Login LightRAG').item.json;\nconst originalInput = $('Prepare Document URL').first().json;\n\n// Get wippli_id from the preserved data\nconst wippliId = originalInput.wippli_id || originalInput.wippliId || 'unknown';\n\n// NEW: Remove timestamp from workspace name for persistence\n// All documents for same wippli_id go to same workspace\nconst workspace = `wippli_${wippliId}`;\n\n// NEW: Generate secure token for workspace access\n// Token is deterministic SHA-256 hash of workspace + secret\nconst crypto = require('crypto');\nconst SECRET_KEY = process.env.LIGHTRAG_SECRET_KEY || 'LAOO_LIGHTRAG_SECRET_2025';\n\nfunction generateToken(workspace) {\n  const hash = crypto\n    .createHash('sha256')\n    .update(workspace + SECRET_KEY)\n    .digest('hex');\n  return hash.substring(0, 16); // 16-char token\n}\n\nconst workspaceToken = generateToken(workspace);\nconst workspaceUrl = `https://lightrag.uk.laoo.dev/w/${workspaceToken}`;\n\n// Get document content directly from Extract Text node\nconst docContent = extractedText.text || '';\n\nconsole.log('=== Workspace Isolation Info ===');\nconsole.log('Wippli ID:', wippliId);\nconsole.log('Workspace:', workspace);\nconsole.log('Token:', workspaceToken);\nconsole.log('URL:', workspaceUrl);\nconsole.log('Content length:', docContent.length);\n\nif (!docContent || docContent.trim().length === 0) {\n  throw new Error('No document content from Extract Text node!');\n}\n\n// Return data for LightRAG upload\nreturn {\n  // Workspace info\n  workspace: workspace,\n  workspace_token: workspaceToken,\n  workspace_url: workspaceUrl,\n\n  // LightRAG auth\n  access_token: loginData.access_token.trim(),\n\n  // Document data\n  document_content: docContent,\n  question: originalInput.question || 'Analyze this document',\n\n  // Metadata\n  wippli_id: wippliId,\n  user: originalInput.user || 'system',\n  pageCount: extractedText.pageCount || 0,\n  status: extractedText.status || 'processed',\n\n  // Timestamp for logging (not used in workspace name)\n  timestamp: Date.now()\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1424,
+        432
+      ],
+      "id": "f5c805a8-6851-46cb-a565-ec54b9394ae7",
+      "name": "Prepare Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pass through necessary data for query nodes\nconst prepareData = $('Prepare Data').item.json;\nconst uploadResponse = $('Upload Document').item.json;\n\nconsole.log('Prepare Data:', JSON.stringify(prepareData, null, 2));\nconsole.log('Upload Response:', JSON.stringify(uploadResponse, null, 2));\n\n// Get token from either 'token' or 'access_token' field\nconst token = prepareData.token || prepareData.access_token;\n\nif (!token) {\n  throw new Error('No token found in Prepare Data!');\n}\n\nreturn {\n  workspace: prepareData.workspace,\n  token: token,\n  wippli_id: prepareData.wippli_id,\n  question: prepareData.question,\n  user: prepareData.user,\n  track_id: uploadResponse.track_id || 'N/A'\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2128,
+        432
+      ],
+      "id": "7e8d3ac9-c444-4e29-acf1-9797a8811f6b",
+      "name": "Pass Through Data"
+    },
+    {
+      "parameters": {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2768,
+        1760
+      ],
+      "id": "4aaa96e3-c96a-4ad1-af0f-00d69a150324",
+      "name": "Fetch D3 Library1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get graph data from Extract Graph\n  const graphData = $input.item.json;\n  const entities = graphData.lightrag_entities || [];\n  const relationships = graphData.lightrag_relationships || [];\n\n  const typeColors = {\n    person: '#FF6B6B',\n    organization: '#4ECDC4',\n    location: '#45B7D1',\n    concept: '#FFA07A',\n    event: '#98D8C8',\n    method: '#F7DC6F',\n    product: '#BB8FCE',\n    service: '#85C1E2',\n    data: '#F8B739',\n    UNKNOWN: '#95A5A6'\n  };\n\n  // Transform entities\n  const nodes = entities.map(e => ({\n    id: e.entity_name,\n    label: e.entity_name,\n    type: e.entity_type,\n    description: (e.description || 'No description').replace(/\"/g, '&quot;').replace(/\\n/g, ' '),\n    color: typeColors[e.entity_type] || typeColors.UNKNOWN\n  }));\n\n  // Transform relationships\n  const links = relationships.map(r => ({\n    source: r.src_id,\n    target: r.tgt_id,\n    label: (r.keywords || '').split(',')[0].replace(/\"/g, '&quot;')\n  }));\n\n  const nodesJson = JSON.stringify(nodes);\n  const linksJson = JSON.stringify(links);\n  const typeColorsJson = JSON.stringify(typeColors);\n\n  // Generate complete HTML\n  const html = `<!DOCTYPE html>\n  <html>\n  <head>\n  <meta charset=\"utf-8\">\n  <title>Knowledge Graph</title>\n  <script src=\"https://d3js.org/d3.v7.min.js\"></script>\n  <style>\n  html, body, #container { width: 100%; height: 100%; margin: 0; }\n  #container { position: relative; padding: 8px; box-sizing: border-box; }\n  svg { width: 100%; height: 100%; cursor: grab; }\n  svg:active { cursor: grabbing; }\n  .links line { stroke: #555; stroke-opacity: 0.8; stroke-width: 1.5px; }\n  .nodes circle { stroke: #fff; stroke-width: 2px; cursor: pointer; }\n  .nodes circle:hover { stroke-width: 3px; }\n  .node-labels { font-size: 11px; font-weight: 600; fill: #1a1a1a; pointer-events: none; }\n  .link-labels { font-size: 9px; fill: #666; pointer-events: none; }\n  #info { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.95); padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); max-width: \n  300px; display: none; z-index: 1000; }\n  #info h3 { margin: 0 0 8px 0; font-size: 16px; }\n  #info .type { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: white; margin-bottom: 8px; }\n  #info .desc { font-size: 12px; line-height: 1.4; color: #333; }\n  .close { position: absolute; top: 8px; right: 8px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; }\n  .close:hover { color: #333; }\n  #stats { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.95); padding: 12px 16px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index:\n   1000; text-align: right; }\n  #stats h3 { margin: 0 0 8px 0; font-size: 14px; }\n  #stats .stat { font-size: 24px; font-weight: 700; color: #667eea; }\n  #stats .label { font-size: 10px; color: #777; text-transform: uppercase; }\n  </style>\n  </head>\n  <body>\n  <div id=\"container\"></div>\n  <div id=\"info\">\n  <button class=\"close\" onclick=\"document.getElementById('info').style.display='none'\">&times;</button>\n  <div id=\"info-content\"></div>\n  </div>\n  <div id=\"stats\">\n  <h3>Knowledge Graph</h3>\n  <div class=\"stat\">${entities.length}</div>\n  <div class=\"label\">Entities</div>\n  <div class=\"stat\" style=\"margin-top:8px\">${relationships.length}</div>\n  <div class=\"label\">Relationships</div>\n  </div>\n  <script>\n\n  (function () {\n    function init() {\n      var container = document.getElementById('container');\n      var bb = container.getBoundingClientRect();\n      var w = bb.width || 900, h = bb.height || 500;\n\n      var nodesData = ${nodesJson};\n      var linksData = ${linksJson};\n      var typeColors = ${typeColorsJson};\n\n      var svg = d3.select('#container').append('svg')\n        .attr('width', w)\n        .attr('height', h);\n\n      var g = svg.append('g');\n\n      var zoom = d3.zoom().scaleExtent([0.1, 6]).on('zoom', function (e) {\n        g.attr('transform', e.transform);\n      });\n      svg.call(zoom);\n\n      var simulation = d3.forceSimulation(nodesData)\n        .force('link', d3.forceLink(linksData).id(function (d) { return d.id; }).distance(100))\n        .force('charge', d3.forceManyBody().strength(-400))\n        .force('center', d3.forceCenter(w / 2, h / 2))\n        .force('collision', d3.forceCollide().radius(40));\n\n      var link = g.append('g').attr('class', 'links')\n        .selectAll('line').data(linksData).enter().append('line');\n\n      var linkLabels = g.append('g').attr('class', 'link-labels')\n        .selectAll('text').data(linksData).enter().append('text')\n        .text(function(d) { return d.label; })\n        .attr('font-size', 9)\n        .attr('fill', '#666')\n        .attr('text-anchor', 'middle');\n\n      var node = g.append('g').attr('class', 'nodes')\n        .selectAll('circle').data(nodesData).enter().append('circle')\n        .attr('r', 8)\n        .attr('fill', function (d) { return d.color; })\n        .on('click', function (e, d) {\n          var panel = document.getElementById('info');\n          var content = document.getElementById('info-content');\n          content.innerHTML = '<h3>' + d.label + '</h3><span class=\"type\" style=\"background:' + d.color + '\">' + d.type + '</span><div class=\"desc\">' + d.description + '</div>';\n          panel.style.display = 'block';\n        })\n        .call(d3.drag()\n          .on('start', function (e, d) { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })\n          .on('drag', function (e, d) { d.fx = e.x; d.fy = e.y; })\n          .on('end', function (e, d) { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })\n        );\n\n      var labels = g.append('g').attr('class', 'node-labels')\n        .selectAll('text').data(nodesData).enter().append('text')\n        .text(function (d) { return d.label; })\n        .attr('font-size', 11)\n        .attr('text-anchor', 'middle')\n        .attr('dy', -12)\n        .attr('fill', '#333');\n\n      simulation.on('tick', function () {\n        link\n          .attr('x1', function (d) { return d.source && d.source.x || 0; })\n          .attr('y1', function (d) { return d.source && d.source.y || 0; })\n          .attr('x2', function (d) { return d.target && d.target.x || 0; })\n          .attr('y2', function (d) { return d.target && d.target.y || 0; });\n\n        linkLabels\n          .attr('x', function(d) { return ((d.source.x || 0) + (d.target.x || 0)) / 2; })\n          .attr('y', function(d) { return ((d.source.y || 0) + (d.target.y || 0)) / 2; });\n\n        node\n          .attr('cx', function (d) { return d.x || w / 2; })\n          .attr('cy', function (d) { return d.y || h / 2; });\n\n        labels\n          .attr('x', function (d) { return d.x || w / 2; })\n          .attr('y', function (d) { return d.y ? (d.y - 12) : (h / 2 - 12); });\n      });\n\n      var ro = new ResizeObserver(function () {\n        var rect = container.getBoundingClientRect();\n        w = rect.width || 900;\n        h = rect.height || 500;\n        svg.attr('width', w).attr('height', h);\n        simulation.force('center', d3.forceCenter(w / 2, h / 2));\n        simulation.alpha(0.2).restart();\n      });\n      ro.observe(container);\n\n      svg.on('dblclick.zoomreset', function () {\n        svg.transition().duration(250).call(zoom.transform, d3.zoomIdentity);\n      });\n    }\n\n    if (document.readyState === 'loading') {\n      document.addEventListener('DOMContentLoaded', init);\n    } else {\n      init();\n    }\n  })();\n  </script>\n  </body>\n  </html>`;\n\n  return {\n    ...graphData,\n    d3_graph_html: html\n  };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3008,
+        1760
+      ],
+      "id": "5d2039fa-48f3-4f25-af3a-da9df75317af",
+      "name": "VasturianoD3 Graph"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get D3.js library code from previous node (HTTP Request returns text in 'data' field)\n  const d3LibraryNode = $('Fetch D3 Library1').first();\n  const d3Code = d3LibraryNode.json.data || d3LibraryNode.json || '';\n\n  // Validate we got the D3 code\n  if (!d3Code || d3Code.length < 1000) {\n    throw new Error('Failed to fetch D3.js library. Got: ' + (typeof d3Code) + ' length: ' + (d3Code?.length || 0));\n  }\n\n  // Get graph data from Extract Graph\n  const graphData = $input.item.json;\n  const entities = graphData.lightrag_entities || [];\n  const relationships = graphData.lightrag_relationships || [];\n\n  const typeColors = {\n    person: '#FF6B6B',\n    organization: '#4ECDC4',\n    location: '#45B7D1',\n    concept: '#FFA07A',\n    event: '#98D8C8',\n    method: '#F7DC6F',\n    product: '#BB8FCE',\n    service: '#85C1E2',\n    data: '#F8B739',\n    UNKNOWN: '#95A5A6'\n  };\n\n  // Transform entities\n  const nodes = entities.map(e => ({\n    id: e.entity_name,\n    label: e.entity_name,\n    type: e.entity_type,\n    description: (e.description || 'No description').replace(/\"/g, '&quot;').replace(/\\n/g, ' '),\n    color: typeColors[e.entity_type] || typeColors.UNKNOWN\n  }));\n\n  // Transform relationships\n  const links = relationships.map(r => ({\n    source: r.src_id,\n    target: r.tgt_id,\n    keywords: (r.keywords || '').split(',')[0].replace(/\"/g, '&quot;'),\n    description: (r.description || '').split('<SEP>')[0].substring(0, 200).replace(/\"/g, '&quot;')\n  }));\n\n  const nodesJson = JSON.stringify(nodes);\n  const linksJson = JSON.stringify(links);\n  const typeColorsJson = JSON.stringify(typeColors);\n\n  // Build complete HTML with inline D3.js\n  const html = `<!DOCTYPE html>\n  <html>\n  <head>\n  <meta charset=\"utf-8\">\n  <meta name=\"mobile-web-app-capable\" content=\"yes\">\n  <title>Knowledge Graph</title>\n  <script>\n  /* D3.js v7.9.0 - Bundled Inline */\n  ${d3Code}\n  </script>\n  <style>\n  *{margin:0;padding:0;box-sizing:border-box}\n  body{font-family:system-ui,sans-serif;background:#ffffff;overflow:hidden}\n  #container{width:100%;height:100vh;position:relative}\n  svg{width:100%;height:100%;cursor:grab}\n  svg:active{cursor:grabbing}\n  .links line{stroke:#262626;stroke-opacity:0.85;stroke-width:1.5px}\n  .nodes circle{stroke:#fff;stroke-width:2px;cursor:pointer;transition:all 0.2s}\n  .nodes circle:hover{stroke-width:4px;r:12}\n  .node-labels{font-size:11px;font-weight:600;fill:#1a1a1a;pointer-events:none}\n  #info{position:absolute;top:20px;left:20px;background:rgba(255,255,255,0.98);padding:20px;border-radius:12px;box-shadow:0 4px \n  20px rgba(0,0,0,0.15);max-width:350px;max-height:80vh;overflow-y:auto;display:none;z-index:1000;border:1px solid #e0e0e0}\n  #info h3{margin:0 0 10px 0;color:#1a1a1a;font-size:18px}\n  #info .type{display:inline-block;padding:4px \n  12px;border-radius:12px;font-size:11px;font-weight:600;color:white;margin-bottom:10px}\n  #info .desc{color:#4a4a4a;font-size:13px;line-height:1.6;margin-bottom:15px}\n  #legend{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,0.98);padding:15px;border-radius:12px;box-shadow:0 \n  4px 20px rgba(0,0,0,0.15);z-index:1000;border:1px solid #e0e0e0}\n  #legend h4{margin:0 0 10px 0;font-size:14px;color:#1a1a1a}\n  .legend-item{display:flex;align-items:center;margin:5px 0;font-size:12px;color:#4a4a4a}\n  .legend-color{width:16px;height:16px;border-radius:50%;margin-right:8px;border:2px solid white;box-shadow:0 1px 3px \n  rgba(0,0,0,0.2)}\n  #stats{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.98);padding:15px \n  20px;border-radius:12px;text-align:right;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);border:1px solid #e0e0e0}\n  #stats h3{margin:0 0 10px 0;font-size:16px;color:#1a1a1a}\n  #stats .stat{font-size:28px;font-weight:700;color:#667eea;margin:5px 0}\n  #stats .label{font-size:11px;color:#777;text-transform:uppercase;letter-spacing:0.5px}\n  .close{position:absolute;top:10px;right:10px;background:none;border:none;font-size:24px;cursor:pointer;color:#999;padding:0;widt\n  h:30px;height:30px}\n  .close:hover{color:#333}\n  #error{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#666;padding:20px;display:none}\n  </style>\n  </head>\n  <body>\n  <div id=\"container\"><svg></svg></div>\n  <div id=\"info\">\n  <button class=\"close\" onclick=\"document.getElementById('info').style.display='none'\">&times;</button>\n  <div id=\"info-content\"></div>\n  </div>\n  <div id=\"legend\"><h4>Entity Types</h4><div id=\"legend-content\"></div></div>\n  <div id=\"stats\">\n  <h3>Knowledge Graph</h3>\n  <div class=\"stat\">${entities.length}</div>\n  <div class=\"label\">Entities</div>\n  <div class=\"stat\">${relationships.length}</div>\n  <div class=\"label\">Relationships</div>\n  </div>\n  <div id=\"error\">\n  <h3>⚠️ Graph Rendering Error</h3>\n  <p id=\"error-message\"></p>\n  </div>\n  <script>\n  (function() {\n    // Wait for DOM to be ready\n    if (document.readyState === 'loading') {\n      document.addEventListener('DOMContentLoaded', initGraph);\n    } else {\n      initGraph();\n    }\n    \n    function initGraph() {\n      try {\n        const nodesData=${nodesJson};\n        const linksData=${linksJson};\n        const typeColors=${typeColorsJson};\n        \n        // Check if container exists\n        const container=document.getElementById('container');\n        if (!container) {\n          throw new Error('Container element not found');\n        }\n        \n        // Use container dimensions instead of window for iframe compatibility\n        const width=container.clientWidth||window.innerWidth;\n        const height=container.clientHeight||window.innerHeight;\n        \n        console.log('D3 Graph Init:', {nodes: nodesData.length, links: linksData.length, width, height});\n        \n        if (!window.d3) {\n          throw new Error('D3.js library not loaded');\n        }\n        \n        const svg=d3.select(\"svg\").attr(\"width\",width).attr(\"height\",height);\n        const g=svg.append(\"g\");\n        const zoom=d3.zoom().scaleExtent([0.1,10]).on(\"zoom\",e=>g.attr(\"transform\",e.transform));\n        svg.call(zoom);\n        \n        const simulation=d3.forceSimulation(nodesData)\n          .force(\"link\",d3.forceLink(linksData).id(d=>d.id).distance(80))\n          .force(\"charge\",d3.forceManyBody().strength(-400))\n          .force(\"center\",d3.forceCenter(width/2,height/2))\n          .force(\"collision\",d3.forceCollide().radius(35));\n        \n        const link=g.append(\"g\").attr(\"class\",\"links\").selectAll(\"line\").data(linksData).enter().append(\"line\");\n        \n        const node=g.append(\"g\").attr(\"class\",\"nodes\").selectAll(\"circle\").data(nodesData).enter().append(\"circle\")\n          .attr(\"r\",8).attr(\"fill\",d=>d.color)\n          .on(\"click\",function(e,d){\n            const panel=document.getElementById(\"info\");\n            const content=document.getElementById(\"info-content\");\n            if (panel && content) {\n              content.innerHTML=\"<h3>\"+d.label+\"</h3><span class='type' style='background:\"+d.color+\"'>\"+d.type+\"</span><div \n  class='desc'>\"+d.description+\"</div>\";\n              panel.style.display=\"block\";\n            }\n          })\n          .call(d3.drag()\n            .on(\"start\",function(e,d){if(!e.active)simulation.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})\n            .on(\"drag\",function(e,d){d.fx=e.x;d.fy=e.y;})\n            .on(\"end\",function(e,d){if(!e.active)simulation.alphaTarget(0);d.fx=null;d.fy=null;}));\n        \n        const label=g.append(\"g\").attr(\"class\",\"node-labels\").selectAll(\"text\").data(nodesData).enter().append(\"text\")\n          .text(d=>d.label).attr(\"text-anchor\",\"middle\").attr(\"dy\",-12);\n        \n        simulation.on(\"tick\",()=>{\n          link.attr(\"x1\",d=>d.source.x).attr(\"y1\",d=>d.source.y).attr(\"x2\",d=>d.target.x).attr(\"y2\",d=>d.target.y);\n          node.attr(\"cx\",d=>d.x).attr(\"cy\",d=>d.y);\n          label.attr(\"x\",d=>d.x).attr(\"y\",d=>d.y);\n        });\n        \n        const uniqueTypes=[...new Set(nodesData.map(n=>n.type))];\n        const legendContent=document.getElementById(\"legend-content\");\n        if (legendContent) {\n          uniqueTypes.forEach(type=>{\n            const item=document.createElement(\"div\");\n            item.className=\"legend-item\";\n            item.innerHTML=\"<div class='legend-color' style='background:\"+typeColors[type]+\"'></div><span>\"+type+\"</span>\";\n            legendContent.appendChild(item);\n          });\n        }\n        \n        console.log('✓ D3 Graph rendered successfully');\n      } catch(error) {\n        console.error('D3 Graph Error:', error);\n        const container = document.getElementById('container');\n        const errorDiv = document.getElementById('error');\n        const errorMsg = document.getElementById('error-message');\n        \n        if (container) container.style.display='none';\n        if (errorDiv) errorDiv.style.display='block';\n        if (errorMsg) errorMsg.textContent=error.message;\n      }\n    }\n  })();\n  </script>\n  </body>\n  </html>`;\n\n  // Return with graph HTML\n  return {\n    ...graphData,\n    d3_graph_html: html\n  };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3536,
+        -832
+      ],
+      "id": "c77c92e4-c08e-4353-b2a2-f094a131d81a",
+      "name": "Create D3 Graph1"
+    },
+    {
+      "parameters": {
+        "amount": 120,
+        "unit": "seconds"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1936,
+        432
+      ],
+      "id": "e2893d94-8b04-4342-96bf-82eb3c828e64",
+      "name": "Wait for Processing",
+      "webhookId": "lightrag-processing-wait"
+    },
+    {
+      "parameters": {
+        "content": "## OUTPUT NODES",
+        "height": 760,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3952,
+        -32
+      ],
+      "name": "Sticky Note",
+      "id": "178bb550-660b-4657-b243-4c128356c98f"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "=text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "name": "actionType",
+              "value": "comment",
+              "type": "string"
+            },
+            {
+              "name": "parallel",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $('Flattening Code').last().json.prompt}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4032,
+        64
+      ],
+      "id": "0cb24d07-6d81-496a-934d-ed899965b56b",
+      "name": "Comment Node"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "=text",
+              "value": "=Hello, {{$json.user_firstName}} {{$json.user_lastName}}! Here's the proofs: {{ $json.wippli_customFormFields.SomeRow1_1.value }}",
+              "type": "string"
+            },
+            {
+              "name": "actionType",
+              "value": "proof",
+              "type": "string"
+            },
+            {
+              "name": "parallel",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4032,
+        288
+      ],
+      "id": "42c6e6db-9014-4dd9-8483-7635868ee0b1",
+      "name": "Proof Node (template)"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        4464,
+        288
+      ],
+      "id": "80e485aa-722e-4095-92d8-35e85050aad2",
+      "name": "Merge To Array"
+    },
+    {
+      "parameters": {
+        "jsCode": "  const flatteningData = $('Flattening Code').first().json;\n  const wippliId = flatteningData.wippli_id;\n  const supplierId = flatteningData.supplier_id;\n\n  const nodes = $input.all().map(({ json }) => {\n    const base = { ...json };\n    const items = [];\n\n    Object.keys(json).forEach(key => {\n      const match = key.match(/^item(\\d+)_(.+)/);\n      if (match) {\n        const index = parseInt(match[1], 10) - 1;\n        const field = match[2];\n        if (!items[index]) items[index] = {};\n        items[index][field] = json[key];\n        delete base[key];\n      }\n    });\n\n    if (items.length > 0) {\n      base.items = items.filter(Boolean);\n    }\n\n    return base;\n  });\n\n  return [{ json: { wippliId, supplierId, nodes } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4688,
+        304
+      ],
+      "id": "649c8e48-a1ac-4e28-9fe5-c898a8e71b3a",
+      "name": "Code: Array wrapping"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "actionType",
+              "value": "={{ $('Webhook').first().json.body.actionType == \"wipboard-refresh\" ? \"wipboard-refresh\" : \"dashboard\" }}",
+              "type": "string",
+              "id": "9e4db73a-9ddb-4a6a-ad0e-c0d0074511f4"
+            },
+            {
+              "name": "parallel",
+              "value": true,
+              "type": "boolean",
+              "id": "8fc68830-9495-4220-afe0-56b7ee80676d"
+            },
+            {
+              "name": "dashboardId",
+              "value": 3,
+              "type": "number",
+              "id": "94e4f132-e5a0-46c2-a689-ab0db5e0750b"
+            },
+            {
+              "name": "name",
+              "value": "=",
+              "type": "string",
+              "id": "fa1ca81a-41e3-4118-bc94-157c40d44995"
+            },
+            {
+              "name": "item1_id",
+              "value": 20,
+              "type": "string",
+              "id": "6e6de913-e02d-491a-bac4-402c81051bf9"
+            },
+            {
+              "name": "item1_gridArea",
+              "value": "W2-Focus-1A",
+              "type": "string",
+              "id": "ec341e54-49c8-4aaa-8302-a52243d34756"
+            },
+            {
+              "name": "item1_frontContentType",
+              "value": "html",
+              "type": "string",
+              "id": "62ca7ff9-675a-46c9-b10e-f5e08b2b6621"
+            },
+            {
+              "name": "item1_frontContent",
+              "value": "={{ $json.html }}",
+              "type": "string",
+              "id": "81f851b9-2461-416d-85f6-37cd967bf5a3"
+            },
+            {
+              "name": "item1_backContentType",
+              "value": "html",
+              "type": "string",
+              "id": "0e1cbe86-c651-40a6-a120-e6cac690110b"
+            },
+            {
+              "name": "item1_backContent",
+              "value": "",
+              "type": "string",
+              "id": "d25ab2be-f962-4273-af43-7fd5faf75b21"
+            },
+            {
+              "name": "item2_id",
+              "value": 21,
+              "type": "string",
+              "id": "7c8b4b7e-ab30-4544-a6f4-90a1aa2f1587"
+            },
+            {
+              "name": "item2_gridArea",
+              "value": "W2-Focus-1B",
+              "type": "string",
+              "id": "1fb942b3-b2ac-42c6-883c-bfa484c5ab74"
+            },
+            {
+              "name": "item2_frontContentType",
+              "value": "html",
+              "type": "string",
+              "id": "cf120b6a-19ba-4afc-8372-98c0970b39f6"
+            },
+            {
+              "name": "item2_frontContent",
+              "value": "={{ $json.item1_frontContent }}",
+              "type": "string",
+              "id": "67225be5-55c1-45e2-9bde-27a0ca894090"
+            },
+            {
+              "name": "item2_backContentType",
+              "value": "html",
+              "type": "string",
+              "id": "86be8407-361b-4464-843f-68e533d6e6d0"
+            },
+            {
+              "name": "item2_backContent",
+              "value": "",
+              "type": "string",
+              "id": "eb7357a2-206c-4c2b-adcf-f99b776351f0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4032,
+        528
+      ],
+      "id": "26eeff4c-f41a-4c35-82ac-99d91552756b",
+      "name": "WipBoard node"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://app.wippli.ai/api/n8n/webhook",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {
+          "batching": {
+            "batch": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5088,
+        304
+      ],
+      "name": "HTTP Request Array",
+      "id": "24091757-733e-47c3-a4a3-7e7874d0ab08"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://lightrag.uk.laoo.dev/query/data?workspace=' + $json.workspace }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ 'Bearer ' + String($json.token).trim() }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  query: 'Extract all entities and relationships',\n  mode: 'global',\n  stream: false\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2608,
+        16
+      ],
+      "id": "fa3cd806-12e4-4cda-a05e-16261e26088a",
+      "name": "Extract Graph"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://lightrag.uk.laoo.dev/query?workspace=' + $json.workspace }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ 'Bearer ' + String($json.token).trim() }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  query: $json.question,\n  mode: 'hybrid',\n  stream: false\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2624,
+        880
+      ],
+      "id": "27ae8a62-7b6d-4848-befb-cdea63030b15",
+      "name": "Query LightRAG"
+    },
+    {
+      "parameters": {
+        "jsCode": "  // Debug: Log what we're about to send\n  console.log('Payload being sent to Wippli:');\n  console.log(JSON.stringify($input.first().json, null, 2));\n\n  // Pass through unchanged\n  return [$input.first()];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4896,
+        304
+      ],
+      "id": "cd0c0088-1457-437f-860e-0c2a50b5ff7d",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "jsCode": "  return $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2848,
+        880
+      ],
+      "id": "37be276f-43e0-4d90-a254-44e0a9eb5d41",
+      "name": "Fetch placeholder"
+    },
+    {
+      "parameters": {
+        "jsCode": "  // ========================================\n  // NODE 1: PREPARE GRAPH DATA (FIXED)\n  // ========================================\n\n  const graphData = $input.item.json;\n\n  // FIX: Access data.entities and data.relationships\n  const entities = (graphData.data && graphData.data.entities) || [];\n  const relationships = (graphData.data && graphData.data.relationships) || [];\n\n  const typeColors = {\n    person: '#FF6B6B',\n    organization: '#4ECDC4',\n    location: '#45B7D1',\n    concept: '#FFA07A',\n    event: '#98D8C8',\n    method: '#F7DC6F',\n    product: '#BB8FCE',\n    service: '#85C1E2',\n    data: '#F8B739',\n    UNKNOWN: '#95A5A6'\n  };\n\n  // Clean and transform entities\n  const nodes = entities.map(e => ({\n    id: String(e.entity_name || '').replace(/['\"]/g, ''),\n    label: String(e.entity_name || '').replace(/['\"]/g, ''),\n    type: String(e.entity_type || 'UNKNOWN'),\n    description: String(e.description || 'No description')\n      .replace(/\"/g, '')\n      .replace(/\\n/g, ' ')\n      .replace(/\\r/g, ' ')\n      .substring(0, 500),\n    color: typeColors[e.entity_type] || typeColors.UNKNOWN\n  }));\n\n  // Clean and transform relationships\n  const links = relationships.map(r => ({\n    source: String(r.src_id || '').replace(/['\"]/g, ''),\n    target: String(r.tgt_id || '').replace(/['\"]/g, ''),\n    label: String(r.keywords || '')\n      .split(',')[0]\n      .replace(/['\"]/g, '')\n      .substring(0, 50)\n  }));\n\n  // Return standardized clean data\n  return {\n    nodes: nodes,\n    links: links,\n    typeColors: typeColors,\n    stats: {\n      entityCount: entities.length,\n      relationshipCount: relationships.length\n    }\n  };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2816,
+        16
+      ],
+      "id": "93c7d568-60d3-422d-9364-ba80983867b9",
+      "name": "Data Preparer"
+    },
+    {
+      "parameters": {
+        "jsCode": "  const data = $input.item.json;\n  const nodes = data.nodes || [];\n  const links = data.links || [];\n  const stats = data.stats || { entityCount: 0, relationshipCount: 0 };\n\n  const nodesJson = JSON.stringify(nodes);\n  const linksJson = JSON.stringify(links);\n\n  const html = `<!DOCTYPE html>\n  <html>\n  <head>\n  <meta charset=\"utf-8\">\n  <title>Knowledge Graph</title>\n  <style>\n  * { margin: 0; padding: 0; box-sizing: border-box; }\n  html, body { width: 100%; height: 100%; overflow: hidden; }\n  body { font-family: system-ui, sans-serif; background: #f5f5f5; }\n  #graph { width: 100%; height: 100%; }\n  #stats {\n    position: absolute;\n    top: 20px;\n    right: 20px;\n    background: rgba(255,255,255,0.95);\n    padding: 15px 20px;\n    border-radius: 12px;\n    box-shadow: 0 4px 20px rgba(0,0,0,0.15);\n    z-index: 1000;\n  }\n  #stats h3 { margin: 0 0 10px 0; font-size: 16px; color: #333; }\n  #stats .stat { font-size: 28px; font-weight: 700; color: #667eea; }\n  #stats .label { font-size: 11px; color: #777; text-transform: uppercase; }\n  #loading {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    font-size: 18px;\n    color: #667eea;\n    background: white;\n    padding: 20px;\n    border-radius: 8px;\n    box-shadow: 0 2px 10px rgba(0,0,0,0.1);\n  }\n  </style>\n  </head>\n  <body>\n  <div id=\"loading\">Loading graph library...</div>\n  <div id=\"graph\"></div>\n  <div id=\"stats\">\n    <h3>Knowledge Graph</h3>\n    <div class=\"stat\">${stats.entityCount}</div>\n    <div class=\"label\">Entities</div>\n    <div class=\"stat\" style=\"margin-top:10px\">${stats.relationshipCount}</div>\n    <div class=\"label\">Relationships</div>\n  </div>\n\n  <script>\n  document.getElementById('loading').textContent = 'Step 1: Inline script running...';\n\n  const script = document.createElement('script');\n  script.src = 'https://unpkg.com/force-graph@1.51.0/dist/force-graph.min.js';\n\n  script.onload = function() {\n    document.getElementById('loading').textContent = 'Step 2: Library loaded! Initializing...';\n    \n    setTimeout(() => {\n      if (typeof ForceGraph === 'undefined') {\n        document.getElementById('loading').textContent = 'ERROR: ForceGraph not defined!';\n        document.getElementById('loading').style.background = '#fee';\n        document.getElementById('loading').style.color = '#c00';\n        return;\n      }\n      \n      const graphData = {\n        nodes: ${nodesJson},\n        links: ${linksJson}\n      };\n      \n      const Graph = ForceGraph()(document.getElementById('graph'))\n        .graphData(graphData)\n        .nodeId('id')\n        .nodeLabel('label')\n        .nodeColor('color')\n        .nodeRelSize(6)\n        .linkLabel('label')\n        .linkColor(() => '#999')\n        .linkWidth(2)\n        .linkDirectionalParticles(2)\n        .linkDirectionalParticleWidth(2)\n        .onNodeClick(node => {\n          Graph.centerAt(node.x, node.y, 1000);\n          Graph.zoom(3, 1000);\n        })\n        .onNodeHover(node => {\n          document.body.style.cursor = node ? 'pointer' : 'default';\n        })\n        .d3AlphaDecay(0.02)\n        .d3VelocityDecay(0.3)\n        .cooldownTime(3000);\n      \n      setTimeout(() => {\n        Graph.zoomToFit(400, 50);\n        document.getElementById('loading').style.display = 'none';\n      }, 500);\n    }, 100);\n  };\n\n  script.onerror = function() {\n    document.getElementById('loading').textContent = 'ERROR: Failed to load graph library from CDN!';\n    document.getElementById('loading').style.background = '#fee';\n    document.getElementById('loading').style.color = '#c00';\n  };\n\n  document.head.appendChild(script);\n  </script>\n  </body>\n  </html>`;\n\n  return [{\n    json: {\n      html: html\n    }\n  }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3024,
+        16
+      ],
+      "id": "bf255d4e-ec1f-4abe-8705-0b4ff0d3df20",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        3536,
+        528
+      ],
+      "id": "ded4e315-f1a9-49ef-bc17-3be1c43e77d3",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "jsCode": " // ========================================\n  // Combined HTML Processor - Handle multiple items from Merge2\n  // ========================================\n\n  const items = $input.all();\n\n  console.log('=== COMBINED HTML PROCESSOR ===');\n  console.log(`Total items received: ${items.length}`);\n\n  // Merge all items\n  let mergedData = {};\n  items.forEach((item, index) => {\n    console.log(`\\nItem ${index} keys:`, Object.keys(item.json).join(', '));\n    mergedData = { ...mergedData, ...item.json };\n  });\n\n  console.log('\\nMerged keys:', Object.keys(mergedData).join(', '));\n\n  // Build output with all captured fields\n  const output = {\n    format: \"html\",\n    html: '',\n    item1_frontContent: ''\n  };\n\n  // CAPTURE html (from Code in JavaScript2)\n  if (mergedData.html) {\n    output.html = mergedData.html;\n    console.log(`✓ Captured html: ${mergedData.html.length} chars`);\n  }\n\n  // CAPTURE d3_graph_html (fallback)\n  if (mergedData.d3_graph_html && !output.html) {\n    output.html = mergedData.d3_graph_html;\n    console.log(`✓ Captured d3_graph_html: ${mergedData.d3_graph_html.length} chars`);\n  }\n\n  // CAPTURE item1_frontContent (from Format LightRAG Response)\n  if (mergedData.item1_frontContent) {\n    output.item1_frontContent = mergedData.item1_frontContent;\n    console.log(`✓ Captured item1_frontContent: ${mergedData.item1_frontContent.length} chars`);\n  }\n\n  // CAPTURE data (D3 library data - optional)\n  if (mergedData.data) {\n    output.data = mergedData.data;\n    console.log(`✓ Captured data field`);\n  }\n\n  console.log('\\n=== FINAL OUTPUT ===');\n  console.log(`html: ${output.html ? output.html.length + ' chars' : 'EMPTY'}`);\n  console.log(`item1_frontContent: ${output.item1_frontContent ? output.item1_frontContent.length + ' chars' : 'EMPTY'}`);\n\n  // Return in proper n8n format\n  return [{\n    json: output\n  }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3776,
+        528
+      ],
+      "id": "dd13c86b-c5db-48b8-b609-987f42b61903",
+      "name": "Combined HTML Processor1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Transform LightRAG response into clean HTML format\n  const response = $input.item.json.response || '';\n  const workspace = $input.item.json.workspace || '';\n  const question = $input.item.json.question || '';\n\n  // Escape HTML to prevent injection\n  const escapeHtml = (str) => {\n    return String(str)\n      .replace(/&/g, '&amp;')\n      .replace(/</g, '&lt;')\n      .replace(/>/g, '&gt;')\n      .replace(/\"/g, '&quot;')\n      .replace(/'/g, '&#039;');\n  };\n\n  // Format the response text with basic markdown-like formatting\n  const formatResponse = (text) => {\n    let formatted = escapeHtml(text);\n\n    // Convert **bold** to <strong>\n    formatted = formatted.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>');\n\n    // Convert _italic_ to <em>\n    formatted = formatted.replace(/_(.*?)_/g, '<em>$1</em>');\n\n    // Convert line breaks to <br>\n    formatted = formatted.replace(/\\n/g, '<br>');\n\n    return formatted;\n  };\n\n  const formattedResponse = formatResponse(response);\n  const queryUrl = `https://lightrag.uk.laoo.dev/query?workspace=${workspace}`;\n\n  // Build HTML with same styling as legal analysis example\n  const html = `<!DOCTYPE html>\n  <html lang=\"en\">\n  <head>\n      <meta charset=\"UTF-8\">\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n      <title>LightRAG Query Response</title>\n      <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">\n      <style>\n          * {\n              margin: 0;\n              padding: 0;\n              box-sizing: border-box;\n          }\n\n          body {\n              font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n              background: #ffffff;\n              color: #000000;\n              line-height: 1.6;\n              padding: 40px 20px;\n          }\n\n          .container {\n              max-width: 800px;\n              margin: 0 auto;\n          }\n\n          .header {\n              border-left: 3px solid #667eea;\n              padding-left: 20px;\n              margin-bottom: 50px;\n          }\n\n          .brand {\n              font-size: 13px;\n              font-weight: 600;\n              letter-spacing: 1.5px;\n              text-transform: uppercase;\n              color: #808080;\n              margin-bottom: 16px;\n          }\n\n          h1 {\n              font-size: 48px;\n              font-weight: 300;\n              letter-spacing: -1px;\n              margin-bottom: 12px;\n              color: #000000;\n          }\n\n          .meta {\n              font-size: 15px;\n              color: #808080;\n              font-weight: 400;\n          }\n\n          .meta a {\n              color: #667eea;\n              text-decoration: none;\n          }\n\n          .meta a:hover {\n              text-decoration: underline;\n          }\n\n          .query-section {\n              border-left: 3px solid #667eea;\n              padding-left: 25px;\n              margin-bottom: 40px;\n          }\n\n          .section-title {\n              font-size: 18px;\n              font-weight: 600;\n              color: #000000;\n              margin-bottom: 12px;\n          }\n\n          .section-content {\n              font-size: 16px;\n              line-height: 1.7;\n              color: #000000;\n          }\n\n          .response-box {\n              background: #f8f9fa;\n              border: 1px solid #d9d9d9;\n              padding: 30px;\n              margin: 40px 0;\n              border-radius: 4px;\n              max-height: 600px;\n              overflow-y: auto;\n          }\n\n          .response-box::-webkit-scrollbar {\n              width: 8px;\n          }\n\n          .response-box::-webkit-scrollbar-track {\n              background: #f1f1f1;\n              border-radius: 4px;\n          }\n\n          .response-box::-webkit-scrollbar-thumb {\n              background: #888;\n              border-radius: 4px;\n          }\n\n          .response-box::-webkit-scrollbar-thumb:hover {\n              background: #555;\n          }\n\n          .footer {\n              margin-top: 60px;\n              display: flex;\n              justify-content: space-between;\n              align-items: center;\n              padding-top: 30px;\n              border-top: 1px solid #d9d9d9;\n          }\n\n          .badge {\n              background: #667eea;\n              color: #fff;\n              padding: 6px 12px;\n              border-radius: 3px;\n              font-weight: 500;\n              text-transform: uppercase;\n              font-size: 12px;\n              letter-spacing: 0.5px;\n          }\n\n          .workspace-info {\n              font-size: 13px;\n              color: #808080;\n          }\n\n          @media (max-width: 768px) {\n              h1 {\n                  font-size: 36px;\n              }\n              \n              .header {\n                  margin-bottom: 30px;\n              }\n\n              .footer {\n                  flex-direction: column;\n                  gap: 20px;\n                  align-items: flex-start;\n              }\n          }\n      </style>\n  </head>\n  <body>\n      <div class=\"container\">\n          <div class=\"header\">\n              <div class=\"brand\">LIGHTRAG QUERY</div>\n              <h1>Knowledge Graph Response</h1>\n              <div class=\"meta\">Workspace: <a href=\"${queryUrl}\" target=\"_blank\" rel=\"noopener noreferrer\">${workspace}</a></div>\n          </div>\n          \n          <div class=\"query-section\">\n              <div class=\"section-title\">Query</div>\n              <div class=\"section-content\">${escapeHtml(question)}</div>\n          </div>\n\n          <div class=\"query-section\">\n              <div class=\"section-title\">Response</div>\n          </div>\n\n          <div class=\"response-box\">\n              <div class=\"section-content\">${formattedResponse}</div>\n          </div>\n\n          <div class=\"footer\">\n              <div class=\"workspace-info\">Generated from LightRAG knowledge graph</div>\n              <div class=\"badge\">WIPPLI x LIGHTRAG</div>\n          </div>\n      </div>\n  </body>\n  </html>`;\n\n  // FIXED: Return in proper n8n format\n  return [{\n    json: {\n      item1_frontContent: html\n    }\n  }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3040,
+        880
+      ],
+      "id": "8859ddcb-fa14-40a8-9641-36807c8ecf40",
+      "name": "Fetch placeholder1"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "PROMPT",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "USER",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "COMPANY",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SUPPLIER",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WIPPLI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "USER": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "WIPPLI": {
+      "main": [
+        [
+          {
+            "node": "Wippli Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SUPPLIER": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "COMPANY": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Flattening Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wippli Code": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "PROMPT": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flattening Code": {
+      "main": [
+        [
+          {
+            "node": "Prepare Document URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Document URL": {
+      "main": [
+        [
+          {
+            "node": "Azure Doc Start",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Azure Doc Start": {
+      "main": [
+        [
+          {
+            "node": "Wait 3sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3sec": {
+      "main": [
+        [
+          {
+            "node": "Get Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Result": {
+      "main": [
+        [
+          {
+            "node": "Extract Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Text": {
+      "main": [
+        [
+          {
+            "node": "Login LightRAG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Login LightRAG": {
+      "main": [
+        [
+          {
+            "node": "Prepare Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Document": {
+      "main": [
+        [
+          {
+            "node": "Wait for Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Data": {
+      "main": [
+        [
+          {
+            "node": "Upload Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pass Through Data": {
+      "main": [
+        [
+          {
+            "node": "Extract Graph",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Query LightRAG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch D3 Library1": {
+      "main": [
+        []
+      ]
+    },
+    "VasturianoD3 Graph": {
+      "main": [
+        []
+      ]
+    },
+    "Wait for Processing": {
+      "main": [
+        [
+          {
+            "node": "Pass Through Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Comment Node": {
+      "main": [
+        [
+          {
+            "node": "Merge To Array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Proof Node (template)": {
+      "main": [
+        [
+          {
+            "node": "Merge To Array",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge To Array": {
+      "main": [
+        [
+          {
+            "node": "Code: Array wrapping",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code: Array wrapping": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WipBoard node": {
+      "main": [
+        [
+          {
+            "node": "Merge To Array",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Extract Graph": {
+      "main": [
+        [
+          {
+            "node": "Data Preparer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query LightRAG": {
+      "main": [
+        [
+          {
+            "node": "Fetch placeholder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request Array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch placeholder": {
+      "main": [
+        [
+          {
+            "node": "Fetch placeholder1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Preparer": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Combined HTML Processor1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combined HTML Processor1": {
+      "main": [
+        [
+          {
+            "node": "WipBoard node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch placeholder1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.uk.laoo.dev",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "user-agent": "axios/1.11.0",
+            "content-length": "20382",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "x-forwarded-for": "20.191.250.254",
+            "x-envoy-external-address": "20.191.250.254",
+            "x-request-id": "8b15c118-5f9d-4628-b85b-2664a506fa3d",
+            "x-envoy-expected-rq-timeout-ms": "1800000",
+            "x-k8se-app-name": "laoo-uk-n8n--0000003",
+            "x-k8se-app-namespace": "k8se-apps",
+            "x-k8se-protocol": "http1",
+            "x-k8se-app-kind": "web",
+            "x-ms-containerapp-name": "laoo-uk-n8n",
+            "x-ms-containerapp-revision-name": "laoo-uk-n8n--0000003",
+            "x-arr-ssl": "true",
+            "x-forwarded-proto": "https",
+            "x-forwarded-path": "/webhook/6fdblp2hq4sisg25vb86er"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "wippliId": 325,
+            "user_name": "Admin Wippli",
+            "actionType": "comment",
+            "business_name": "Wippli",
+            "nodesObject": {
+              "user": {
+                "id": 10,
+                "role": "admin",
+                "firstName": "Admin",
+                "lastName": "Wippli",
+                "email": "admin@wippli.com",
+                "workPhone": null,
+                "emailNotifications": true,
+                "websiteNotifications": true,
+                "phonePushNotifications": true,
+                "isCreator": true,
+                "isSuperAdmin": true,
+                "timeZone": null,
+                "avatar": null,
+                "privateKey": "",
+                "createdAt": "2025-09-07T03:07:38.002Z",
+                "updatedAt": "2025-10-18T12:07:08.871Z",
+                "isDeleted": false,
+                "aiAgentId": null,
+                "currentUserProfile": "CLIENT",
+                "online": 2,
+                "companyId": 7,
+                "companyType": "SUPPLIER",
+                "companyName": "Wippli"
+              },
+              "wippli": {
+                "id": 325,
+                "name": null,
+                "status": "toAllocate",
+                "type": null,
+                "deadline": null,
+                "instructions": null,
+                "companyId": 10,
+                "authorCompanyId": 7,
+                "authorId": 10,
+                "createdAt": "2025-10-18T12:07:30.131Z",
+                "updatedAt": "2025-10-18T12:07:30.131Z",
+                "wippliBriefUpdatedAt": null,
+                "productId": 20,
+                "customFormFields": [
+                  {
+                    "name": "Map_question",
+                    "value": "Establish the relationships of the present documents",
+                    "type": "text",
+                    "label": "What should LAWstudio map for you?",
+                    "id": 1215,
+                    "createdAt": "2025-10-18T12:07:30.285Z",
+                    "updatedAt": "2025-10-18T12:07:30.285Z"
+                  },
+                  {
+                    "name": "Drop_document",
+                    "value": "https://wippli-production.s3.ap-southeast-2.amazonaws.com//wippli/uploads/9cd3a920-7aea-d9c3-1572-ed8f8a6053cf/bacd76bc-1ab8-c5a9-da81-285da0c13cad.pdf",
+                    "type": "file",
+                    "label": "Drop documents for visual analysis",
+                    "id": 1216,
+                    "createdAt": "2025-10-18T12:07:30.285Z",
+                    "updatedAt": "2025-10-18T12:07:30.285Z"
+                  }
+                ]
+              },
+              "company": {
+                "id": 7,
+                "companyName": "Wippli",
+                "companyCode": "75f6595c626643a9c1dd",
+                "brandColour": "#CEDE00",
+                "companyShortName": "WIP",
+                "companyEmail": "admin@wippli.com",
+                "address": "",
+                "city": "Sydney",
+                "state": "",
+                "country": "Australia",
+                "postCode": "",
+                "industry": "Artificial Intelligence",
+                "businessType": "Startup",
+                "description": "<p dir = \"auto\"></p>\r\n",
+                "htmlDescription": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Wippli - Convert Workflows into Power Solutions</title>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">\r\n    <style>\r\n        * { margin: 0; padding: 0; box-sizing: border-box; }\r\n        body { font-family: 'IBM Plex Sans', sans-serif; line-height: 1.6; color: #000; background: #fff; overflow-x: hidden; }\r\n        .wrapper { width: 100%; }\r\n        \r\n        .header-logo { background: #fff; padding: 30px 20px; text-align: center; border-bottom: 3px solid #FF9238; }\r\n        .header-logo img { height: 60px; width: auto; }\r\n        \r\n        .mobile-link { display: none; background: #512F8F; padding: 15px; text-align: center; }\r\n        .mobile-link a { display: inline-block; background: #FF9238; color: #fff; padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1em; box-shadow: 0 4px 15px rgba(255,146,56,0.3); transition: all 0.3s ease; }\r\n        .mobile-link a:hover { background: #ff7d1a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,146,56,0.4); }\r\n        \r\n        .hero-text { background: linear-gradient(135deg, #512F8F 0%, #3d2370 100%); color: #fff; padding: 20px 20px 60px 20px; text-align: center; position: relative; }\r\n        .hero-text .main-title { font-size: 2.8em; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.02em; line-height: 1.2; }\r\n        .hero-text .sub-title { font-size: 1.3em; font-weight: 300; opacity: 0.95; max-width: 800px; margin: 0 auto; line-height: 1.5; }\r\n        .hero-text .highlight { color: #FF9238; font-weight: 500; }\r\n        \r\n        .carousel-container { padding: 100px 20px; background: #fff; position: relative; overflow: hidden; }\r\n        .carousel-track { display: flex; width: 500%; animation: slideCarousel 50s infinite ease-in-out; }\r\n        @keyframes slideCarousel { 0%, 16% { transform: translateX(0%); } 20%, 36% { transform: translateX(-20%); } 40%, 56% { transform: translateX(-40%); } 60%, 76% { transform: translateX(-60%); } 80%, 96% { transform: translateX(-80%); } 100% { transform: translateX(0%); } }\r\n        .carousel-slide { width: 20%; padding: 0 50px; display: flex; flex-direction: column; position: relative; }\r\n        .carousel-slide::before { content: ''; position: absolute; left: 50px; top: 0; width: 4px; height: 100px; background: linear-gradient(180deg, #512F8F 0%, #FF9238 100%); border-radius: 2px; }\r\n        .carousel-title { font-size: 2.5em; font-weight: 700; color: #512F8F; margin-bottom: 15px; padding-left: 50px; letter-spacing: -0.02em; line-height: 1.1; margin-top: -5px; }\r\n        .carousel-subtitle { font-size: 1.15em; color: #666; font-weight: 400; padding-left: 50px; line-height: 1.6; }\r\n        \r\n        .stats { display: flex; justify-content: space-around; flex-wrap: wrap; background: linear-gradient(135deg, #512F8F 0%, #3d2370 100%); color: #fff; padding: 70px 20px; position: relative; }\r\n        .stats::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #FF9238, transparent); }\r\n        .stat { text-align: center; margin: 15px 20px; padding: 20px; }\r\n        .stat-number { font-size: 3.5em; font-weight: 700; letter-spacing: -0.01em; color: #FF9238; margin-bottom: 5px; }\r\n        .stat-label { font-size: 1em; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9; }\r\n        \r\n        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }\r\n        .section:nth-child(even) { background: #f9f9f9; }\r\n        h2 { font-size: 2.8em; font-weight: 700; margin-bottom: 1em; letter-spacing: -0.02em; text-align: center; color: #512F8F; }\r\n        \r\n        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }\r\n        .feature { border: 2px solid #e0e0e0; padding: 40px; background: #fff; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; align-items: center; text-align: center; }\r\n        .feature::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #512F8F 0%, #FF9238 100%); transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 1; }\r\n        .feature:hover { border-color: #512F8F; transform: translateY(-5px); box-shadow: 0 15px 40px rgba(81,47,143,0.15); }\r\n        .feature:hover::before { transform: translateX(0); }\r\n        .feature-icon { width: 100px; height: auto; margin-bottom: 25px; display: block; }\r\n        .feature h3 { margin: 0 0 15px 0; font-size: 1.6em; font-weight: 600; letter-spacing: -0.01em; color: #512F8F; }\r\n        .feature p { color: #555; margin: 0; font-weight: 400; line-height: 1.8; font-size: 1.05em; }\r\n        \r\n        .creator-section { background: linear-gradient(135deg, #512F8F 0%, #3d2370 100%); color: #fff; padding: 100px 20px; text-align: center; position: relative; overflow: hidden; }\r\n        .creator-section::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,146,56,0.1) 0%, transparent 70%); border-radius: 50%; }\r\n        .creator-section h2 { color: #fff; font-size: 3.2em; margin-bottom: 0.4em; }\r\n        .creator-section .subtitle { font-size: 1.5em; font-weight: 300; margin-bottom: 1.5em; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; }\r\n        .creator-benefits { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; margin: 50px 0; position: relative; z-index: 1; }\r\n        .benefit-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2); padding: 40px; border-radius: 15px; width: 280px; transition: all 0.4s ease; }\r\n        .benefit-card:hover { background: rgba(255,255,255,0.15); border-color: #FF9238; transform: translateY(-8px); }\r\n        .benefit-number { font-size: 3em; font-weight: 700; color: #FF9238; margin-bottom: 10px; }\r\n        .benefit-title { font-size: 1.4em; font-weight: 600; margin-bottom: 10px; }\r\n        .benefit-description { font-size: 1em; opacity: 0.9; line-height: 1.6; }\r\n        \r\n        .cta-buttons { margin-top: 50px; position: relative; z-index: 1; }\r\n        .button { display: inline-block; padding: 18px 45px; margin: 10px; text-decoration: none; font-weight: 600; font-size: 1.15em; letter-spacing: 0.02em; border-radius: 8px; transition: all 0.3s ease; text-transform: uppercase; }\r\n        .button-primary { background: #FF9238; color: #fff; border: 2px solid #FF9238; box-shadow: 0 5px 20px rgba(255,146,56,0.4); }\r\n        .button-primary:hover { background: #ff7d1a; border-color: #ff7d1a; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,146,56,0.5); }\r\n        .button-secondary { background: transparent; color: #fff; border: 2px solid #fff; }\r\n        .button-secondary:hover { background: #fff; color: #512F8F; transform: translateY(-3px); }\r\n        \r\n        .footer { text-align: center; padding: 50px 20px; background: #1a1a1a; color: #999; border-top: 3px solid #FF9238; }\r\n        .footer p { margin: 10px 0; font-size: 0.95em; }\r\n        .footer strong { color: #fff; font-weight: 600; }\r\n        \r\n        @media (max-width: 768px) {\r\n            .mobile-link { display: block; }\r\n            .header-logo img { height: 45px; }\r\n            .hero-text .main-title { font-size: 2em; }\r\n            h2 { font-size: 2em; }\r\n            .creator-section h2 { font-size: 2.2em; }\r\n            .benefit-card { width: 100%; }\r\n            .carousel-container { padding: 60px 10px; }\r\n            .carousel-slide { padding: 0 20px; }\r\n            .carousel-title { font-size: 1.8em; padding-left: 35px; }\r\n            .carousel-subtitle { font-size: 1em; padding-left: 35px; }\r\n            .carousel-slide::before { left: 20px; height: 80px; }\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div class=\"wrapper\">\r\n        <div class=\"header-logo\">\r\n            <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_positive_Dec2021_Final.png\" alt=\"Wippli\">\r\n        </div>\r\n        \r\n        <div class=\"mobile-link\">\r\n            <a href=\"#become-creator\">Become a Creator</a>\r\n        </div>\r\n        \r\n        <div class=\"hero-text\">\r\n            <div class=\"main-title\">Convert Your Workflows<br>into <span class=\"highlight\">Power Solutions</span></div>\r\n            <div class=\"sub-title\">Transform content workflows into intelligent digital products ready for business in just one day</div>\r\n        </div>\r\n        \r\n        <div class=\"carousel-container\">\r\n            <div class=\"carousel-track\">\r\n                <div class=\"carousel-slide\">\r\n                    <div class=\"carousel-title\">No-Code Builder</div>\r\n                    <div class=\"carousel-subtitle\">Visual workflow designer enabling non-technical creators to build enterprise-grade solutions</div>\r\n                </div>\r\n                <div class=\"carousel-slide\">\r\n                    <div class=\"carousel-title\">AI-Powered Automation</div>\r\n                    <div class=\"carousel-subtitle\">Specialised AI agents transform your content workflows into intelligent products</div>\r\n                </div>\r\n                <div class=\"carousel-slide\">\r\n                    <div class=\"carousel-title\">Real-Time Collaboration</div>\r\n                    <div class=\"carousel-subtitle\">Sub-100ms latency collaboration with WebSocket technology for seamless teamwork</div>\r\n                </div>\r\n                <div class=\"carousel-slide\">\r\n                    <div class=\"carousel-title\">Marketplace Ready</div>\r\n                    <div class=\"carousel-subtitle\">Built-in commerce platform to monetise your digital solutions instantly</div>\r\n                </div>\r\n                <div class=\"carousel-slide\">\r\n                    <div class=\"carousel-title\">Enterprise Security</div>\r\n                    <div class=\"carousel-subtitle\">ISO 27001 aligned with financial-grade security and flexible regional deployment</div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        \r\n        <div class=\"stats\">\r\n            <div class=\"stat\">\r\n                <div class=\"stat-number\">1 Day</div>\r\n                <div class=\"stat-label\">To Launch</div>\r\n            </div>\r\n            <div class=\"stat\">\r\n                <div class=\"stat-number\">Zero</div>\r\n                <div class=\"stat-label\">Coding Required</div>\r\n            </div>\r\n            <div class=\"stat\">\r\n                <div class=\"stat-number\">100%</div>\r\n                <div class=\"stat-label\">Your IP</div>\r\n            </div>\r\n            <div class=\"stat\">\r\n                <div class=\"stat-number\">Global</div>\r\n                <div class=\"stat-label\">Reach</div>\r\n            </div>\r\n        </div>\r\n        \r\n        <div class=\"section\">\r\n            <h2>The Wippli Ecosystem</h2>\r\n            <div class=\"features\">\r\n                <div class=\"feature\">\r\n                    <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_Mailer_15-897x499px_Dec2021_70007_Final.png\" alt=\"Creator Hub\" class=\"feature-icon\">\r\n                    <h3>Creator Hub</h3>\r\n                    <p>Your dedicated workspace to design, build, and orchestrate digital solutions using intuitive no-code tools</p>\r\n                </div>\r\n                <div class=\"feature\">\r\n                    <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_Mailer_08-683x499px_Dec2021_70007_Final.png\" alt=\"AI Platform\" class=\"feature-icon\">\r\n                    <h3>AI Platform</h3>\r\n                    <p>Advanced natural language processing and intelligent automation that transforms workflows into products</p>\r\n                </div>\r\n                <div class=\"feature\">\r\n                    <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_Mailer_13-897x499px_Dec2021_70007_Final.png\" alt=\"Marketplace\" class=\"feature-icon\">\r\n                    <h3>Marketplace</h3>\r\n                    <p>Commerce platform where you publish, distribute, and monetise your digital products globally</p>\r\n                </div>\r\n                <div class=\"feature\">\r\n                    <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_Mailer_05-683x499px_Dec2021_70007_Final.png\" alt=\"Landing Pages\" class=\"feature-icon\">\r\n                    <h3>Landing Pages</h3>\r\n                    <p>Customisable promotional pages for showcasing and marketing your solutions to the world</p>\r\n                </div>\r\n                <div class=\"feature\">\r\n                    <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_Mailer_06-683x499px_Dec2021_70007_Final.png\" alt=\"Payment Layer\" class=\"feature-icon\">\r\n                    <h3>Payment Layer</h3>\r\n                    <p>Integrated financial-grade payment processing with Payoneer partnership for seamless transactions</p>\r\n                </div>\r\n                <div class=\"feature\">\r\n                    <img src=\"https://wipplimailers.blob.core.windows.net/images/Wippli_Mailer_14-897x499px_Dec2021_70007_Final.png\" alt=\"Enterprise Security\" class=\"feature-icon\">\r\n                    <h3>Enterprise Security</h3>\r\n                    <p>Complete data sovereignty with ISO 27001 alignment and flexible regional deployment options</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        \r\n        <div class=\"creator-section\" id=\"become-creator\">\r\n            <h2>Become a Creator</h2>\r\n            <div class=\"subtitle\">Join an exclusive community transforming workflows into profitable digital solutions</div>\r\n            \r\n            <div class=\"creator-benefits\">\r\n                <div class=\"benefit-card\">\r\n                    <div class=\"benefit-number\">01</div>\r\n                    <div class=\"benefit-title\">Exclusive Access</div>\r\n                    <div class=\"benefit-description\">Early access to cutting-edge tools and features before general release</div>\r\n                </div>\r\n                <div class=\"benefit-card\">\r\n                    <div class=\"benefit-number\">02</div>\r\n                    <div class=\"benefit-title\">1 Day to Business</div>\r\n                    <div class=\"benefit-description\">Launch production-ready solutions in 24 hours with our turn-key platform</div>\r\n                </div>\r\n                <div class=\"benefit-card\">\r\n                    <div class=\"benefit-number\">03</div>\r\n                    <div class=\"benefit-title\">Own Your IP</div>\r\n                    <div class=\"benefit-description\">100% ownership of your solutions and complete control over monetisation</div>\r\n                </div>\r\n            </div>\r\n            \r\n            <div class=\"cta-buttons\">\r\n                <a href=\"#\" class=\"button button-primary\">Start Creating Now</a>\r\n                <a href=\"#\" class=\"button button-secondary\">Learn More</a>\r\n            </div>\r\n        </div>\r\n        \r\n        <div class=\"footer\">\r\n            <p><strong>Wippli®</strong> | Empowering Creators to Build the Future</p>\r\n            <p>© 2025 Wippli. All rights reserved. | Enterprise-Grade Creator Platform</p>\r\n        </div>\r\n    </div>\r\n</body>\r\n</html>",
+                "services": "",
+                "website": "",
+                "businessRate": "102",
+                "currency": "usd",
+                "companyLogo": null,
+                "companyIcon": null,
+                "companyType": "SUPPLIER",
+                "createdAt": "2025-09-07T03:07:38.002Z",
+                "updatedAt": "2025-10-10T04:30:47.135Z"
+              },
+              "supplier": {
+                "id": 25,
+                "role": "user",
+                "firstName": "RAG",
+                "lastName": "Law",
+                "email": "rag_law@laoo.dev",
+                "workPhone": null,
+                "emailNotifications": true,
+                "websiteNotifications": true,
+                "phonePushNotifications": true,
+                "isCreator": false,
+                "isSuperAdmin": false,
+                "timeZone": null,
+                "avatar": null,
+                "privateKey": "",
+                "createdAt": "2025-09-21T08:20:33.938Z",
+                "updatedAt": "2025-09-29T11:21:58.015Z",
+                "isDeleted": false,
+                "aiAgentId": "ai-agent-rag-law",
+                "currentUserProfile": "SUPPLIER",
+                "online": 15,
+                "companyId": 10,
+                "companyType": "SUPPLIER",
+                "companyName": "LAWstudio.ai"
+              },
+              "aiAgent": {
+                "prompt": "You are RAG Law, an expert legal analysis AI specialising in document intelligence and relationship mapping. Your core function is to transform legal documents into structured knowledge graphs that reveal hidden patterns, connections, and insights.\n\nCAPABILITIES:\n- Extract and map all entities (parties, organisations, jurisdictions)\n- Identify and visualise relationships between clauses, obligations, and rights\n- Detect risk patterns, liability chains, and compliance gaps\n- Create temporal sequences of events, deadlines, and obligations\n- Link related precedents, citations, and statutory references\n- Generate structured JSON outputs for graph visualisation\n\nANALYSIS PROTOCOL:\n1. Parse uploaded documents for legal entities and concepts\n2. Map relationships with confidence scores\n3. Flag potential issues and areas requiring attention\n4. Structure findings into nodes (entities) and edges (relationships)\n5. Prioritise based on user's specified focus area\n\nSECURITY:\n- Process all documents in isolated user environment\n- Never retain or reference data between sessions\n- Each analysis is ephemeral and contained\n- No cross-referencing between different users' documents\n\nOUTPUT:\nProvide structured data suitable for knowledge graph visualisation, with clear relationship types, entity classifications, and risk indicators. Focus on actionable legal intelligence.",
+                "knowledge_base": []
+              }
+            },
+            "Map_question": "Establish the relationships of the present documents",
+            "Drop_document": "https://wippli-production.s3.ap-southeast-2.amazonaws.com//wippli/uploads/9cd3a920-7aea-d9c3-1572-ed8f8a6053cf/bacd76bc-1ab8-c5a9-da81-285da0c13cad.pdf"
+          },
+          "webhookUrl": "https://laoo-uk-n8n.bravepond-1a38fd73.uksouth.azurecontainerapps.io/webhook/6fdblp2hq4sisg25vb86er",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "versionId": "71d86204-4975-4cad-afe5-c9480f5c6096",
+  "triggerCount": 1,
+  "shared": [
+    {
+      "createdAt": "2025-09-30T11:51:51.488Z",
+      "updatedAt": "2025-09-30T11:51:51.488Z",
+      "role": "workflow:owner",
+      "workflowId": "sMNCPYGpsCqv9O1A",
+      "projectId": "K75ffJutHxb1AV7B",
+      "project": {
+        "createdAt": "2025-09-26T05:49:22.216Z",
+        "updatedAt": "2025-09-26T05:52:05.101Z",
+        "id": "K75ffJutHxb1AV7B",
+        "name": "Master LAWstudio <master@laoo.dev>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "projectRelations": [
+          {
+            "createdAt": "2025-09-26T05:49:22.216Z",
+            "updatedAt": "2025-09-26T05:49:22.216Z",
+            "userId": "f0e91c04-b963-4c7a-878f-b2a113f49236",
+            "projectId": "K75ffJutHxb1AV7B",
+            "user": {
+              "createdAt": "2025-09-26T05:49:20.237Z",
+              "updatedAt": "2025-10-23T06:31:16.811Z",
+              "id": "f0e91c04-b963-4c7a-878f-b2a113f49236",
+              "email": "master@laoo.dev",
+              "firstName": "Master",
+              "lastName": "LAWstudio",
+              "personalizationAnswers": {
+                "version": "v4",
+                "personalization_survey_submitted_at": "2025-09-26T05:52:17.449Z",
+                "personalization_survey_n8n_version": "1.112.5",
+                "companySize": "100-499",
+                "companyType": "ecommerce",
+                "role": "customer-support",
+                "reportedSource": "google"
+              },
+              "settings": {
+                "userActivated": true,
+                "easyAIWorkflowOnboarded": true,
+                "firstSuccessfulWorkflowId": "BUoYiWiOpUMwdJXr",
+                "userActivatedAt": 1758962436818,
+                "npsSurvey": {
+                  "responded": true,
+                  "lastShownAt": 1759225619188
+                }
+              },
+              "disabled": false,
+              "mfaEnabled": false,
+              "lastActiveAt": "2025-10-22",
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "tags": []
+}
