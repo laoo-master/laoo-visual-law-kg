@@ -1,0 +1,287 @@
+{
+  "containers": [
+    {
+      "env": [
+        {
+          "name": "HOST",
+          "value": "0.0.0.0"
+        },
+        {
+          "name": "PORT",
+          "value": "9621"
+        },
+        {
+          "name": "WEBUI_TITLE",
+          "value": "LAOO UK LightRAG"
+        },
+        {
+          "name": "WORKSPACE",
+          "value": "fresh_workspace_1758802837"
+        },
+        {
+          "name": "AUTH_ACCOUNTS",
+          "value": "admin@laoo.dev:Laoo_jhjkk-5%jnjjnkjkj"
+        },
+        {
+          "name": "TOKEN_SECRET",
+          "value": "laoo-uk-lightrag-jwt-secret-2025"
+        },
+        {
+          "name": "WEBUI_AUTH",
+          "value": "true"
+        },
+        {
+          "name": "AZURE_OPENAI_ENDPOINT",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "AZURE_OPENAI_API_KEY",
+          "value": "4a18f5cfc65d4b6f906a495ec9c22314"
+        },
+        {
+          "name": "AZURE_OPENAI_API_VERSION",
+          "value": "2024-08-01-preview"
+        },
+        {
+          "name": "AZURE_OPENAI_API_TYPE",
+          "value": "azure"
+        },
+        {
+          "name": "AZURE_EMBEDDING_DEPLOYMENT",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "AZURE_EMBEDDING_MODEL",
+          "value": "text-embedding-3-large"
+        },
+        {
+          "name": "EMBEDDING_DIMENSIONS",
+          "value": "3072"
+        },
+        {
+          "name": "AZURE_CHAT_DEPLOYMENT",
+          "value": "gpt-35-turbo-deployment"
+        },
+        {
+          "name": "AZURE_CHAT_MODEL",
+          "value": "gpt-4o"
+        },
+        {
+          "name": "ENABLE_AZURE_OPENAI",
+          "value": "true"
+        },
+        {
+          "name": "VECTOR_DIMENSIONS",
+          "value": "3072"
+        },
+        {
+          "name": "CHUNK_SIZE",
+          "value": "1200"
+        },
+        {
+          "name": "CHUNK_OVERLAP",
+          "value": "100"
+        },
+        {
+          "name": "MAX_TOKENS",
+          "value": "8191"
+        },
+        {
+          "name": "EMBEDDING_MODEL",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "LLM_MODEL",
+          "value": "gpt-4o-deployment"
+        },
+        {
+          "name": "EMBEDDING_PROVIDER",
+          "value": "azure"
+        },
+        {
+          "name": "LLM_PROVIDER",
+          "value": "azure"
+        },
+        {
+          "name": "USE_OLLAMA",
+          "value": "false"
+        },
+        {
+          "name": "DISABLE_OLLAMA",
+          "value": "true"
+        },
+        {
+          "name": "LLM_BINDING",
+          "value": "azure_openai"
+        },
+        {
+          "name": "EMBEDDING_BINDING",
+          "value": "azure_openai"
+        },
+        {
+          "name": "LLM_BINDING_HOST",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "EMBEDDING_BINDING_HOST",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "value": "4a18f5cfc65d4b6f906a495ec9c22314"
+        },
+        {
+          "name": "OPENAI_BASE_URL",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "OPENAI_API_TYPE",
+          "value": "azure"
+        },
+        {
+          "name": "OPENAI_API_VERSION",
+          "value": "2024-08-01-preview"
+        },
+        {
+          "name": "OPENAI_AZURE_ENDPOINT",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "OPENAI_AZURE_API_KEY",
+          "value": "4a18f5cfc65d4b6f906a495ec9c22314"
+        },
+        {
+          "name": "OPENAI_AZURE_DEPLOYMENT",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "OPENAI_AZURE_EMBEDDING_DEPLOYMENT",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "OPENAI_AZURE_CHAT_DEPLOYMENT",
+          "value": "gpt-4o-deployment"
+        },
+        {
+          "name": "OPENAI_API_BASE",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/openai"
+        },
+        {
+          "name": "AZURE_OPENAI_BASE_URL",
+          "value": "https://laoo-uk-openai-new.openai.azure.com"
+        },
+        {
+          "name": "OPENAI_ENGINE",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "OPENAI_DEPLOYMENT",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "OPENAI_MODEL_ENGINE",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "OPENAI_COMPLETION_ENGINE",
+          "value": "gpt-4o-deployment"
+        },
+        {
+          "name": "OPENAI_DEPLOYMENT_NAME",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "OPENAI_AZURE_BASE",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/openai"
+        },
+        {
+          "name": "AZURE_OPENAI_BASE",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/openai"
+        },
+        {
+          "name": "AZURE_EMBED_ENDPOINT",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "AZURE_EMBED_KEY",
+          "value": "4a18f5cfc65d4b6f906a495ec9c22314"
+        },
+        {
+          "name": "AZURE_EMBED_VERSION",
+          "value": "2024-08-01-preview"
+        },
+        {
+          "name": "AZURE_EMBED_DEPLOYMENT",
+          "value": "embedding-large-deployment"
+        },
+        {
+          "name": "AZURE_CHAT_ENDPOINT",
+          "value": "https://laoo-uk-openai-new.openai.azure.com/"
+        },
+        {
+          "name": "AZURE_CHAT_KEY",
+          "value": "4a18f5cfc65d4b6f906a495ec9c22314"
+        },
+        {
+          "name": "AZURE_CHAT_VERSION",
+          "value": "2024-08-01-preview"
+        },
+        {
+          "name": "CLEAR_WORKSPACE",
+          "value": "false"
+        },
+        {
+          "name": "RESET_STORAGE",
+          "value": "false"
+        },
+        {
+          "name": "FORCE_CLEAR",
+          "value": "false"
+        },
+        {
+          "name": "EMBEDDING_DIM",
+          "value": "3072"
+        },
+        {
+          "name": "VECTOR_DIM",
+          "value": "3072"
+        },
+        {
+          "name": "LIGHTRAG_EMBEDDING_DIM",
+          "value": "3072"
+        }
+      ],
+      "image": "ghcr.io/hkuds/lightrag:latest",
+      "name": "laoo-uk-lightrag",
+      "resources": {
+        "cpu": 4.0,
+        "ephemeralStorage": "8Gi",
+        "memory": "8Gi"
+      },
+      "volumeMounts": [
+        {
+          "mountPath": "/app/data",
+          "volumeName": "lightragvolume"
+        }
+      ]
+    }
+  ],
+  "initContainers": null,
+  "revisionSuffix": "",
+  "scale": {
+    "cooldownPeriod": 300,
+    "maxReplicas": 3,
+    "minReplicas": 0,
+    "pollingInterval": 30,
+    "rules": null
+  },
+  "serviceBinds": null,
+  "terminationGracePeriodSeconds": null,
+  "volumes": [
+    {
+      "name": "lightragvolume",
+      "storageName": "lightragstorage",
+      "storageType": "AzureFile"
+    }
+  ]
+}

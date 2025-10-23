@@ -1,0 +1,21 @@
+.env
+# Secrets
+.env
+*.key
+*.pem
+backup/env-file-backup.txt
+
+# Azure
+*.publishsettings
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+/tmp/
+*.tmp
+*.swp
